@@ -50,3 +50,8 @@ define service{
         check_command                   check_nrpe!check_mem
 }
 ">> /etc/nagios/conf.d/"$host".cfg
+#then cd /etc/nagios
+#vim generate_config.sh
+#then :set paste, insert
+#then chmod +x generate_config.sh, check as ls -l - should have a green file
+#
