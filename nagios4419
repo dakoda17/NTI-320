@@ -16,3 +16,6 @@ chmod 666 /var/log/nagios/nagios.log
 
 /usr/sbin/nagios -v /etc/nagios/nagios.cfg
 systemctl restart nagios
+
+#for the client
+yum -y install nagios-nrpe-server nagios-plugins
