@@ -1,0 +1,11 @@
+#this is my modified automation for the nagios client
+
+
+
+#for the client
+#yum -y install nagios-nrpe-server nagios-plugins
+#yum -y install nrpe
+#sed -i 's/allowed_hosts=127.0.0.1/allowed_hosts=127.0.0.1, 10.150.0.2/g' /etc/nagios/nrpe.cfg
+#systemctl restart nrpe
+#sed -i 's/#command[check_mem]=/usr/lib64/nagios/plugins/custom_check_mem -n $ARG1$/g' command[check_mem]=/usr/lib64/nagios/plugins/check_mem.sh -w 80 -c 90
+#chmod +x /usr/lib64/nagios/plugins/check_mem.sh
