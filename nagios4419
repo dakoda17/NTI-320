@@ -37,7 +37,7 @@ echo "define command{
 
 #for problem solving the server:
 # /usr/lib64/nagios/plugins/check_nrpe -H 10:wq
-:wq.150.0.4 (this is the internal IP of the client) -c check_mem (OR can also try check_load)
+#:wq.150.0.4 (this is the internal IP of the client) -c check_mem (OR can also try check_load)
 # the return should look like:
 #[root@nagios4419 koda]# /usr/lib64/nagios/plugins/check_nrpe -H 10.150.0.4 -c check_mem
 #NRPE: Command 'check_mem' not defined
