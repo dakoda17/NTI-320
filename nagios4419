@@ -31,9 +31,6 @@ echo "define command{
 usermod -a -G nagios koda
 # I also had to:
 chmod 775 /etc/nagios/conf.d
-# I also had to:
-usermod -a -G nagios koda
-
 
 #chmod +x /usr/lib64/nagios/plugins/check_mem.sh
 
