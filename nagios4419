@@ -30,7 +30,7 @@ echo "define command{
 # Note: I had to add user nicolebade to group nagios using:
 usermod -a -G nagios koda
 # I also had to:
-chmod 775 /etc/nagios/servers
+chmod 777 /etc/nagios/servers
 
 #chmod +x /usr/lib64/nagios/plugins/check_mem.sh
 
