@@ -1,7 +1,11 @@
 #!/bin/bash
 
 #this is my modified automation for the nagios client
-
+yum install -y nagios-nrpe-server nagios-plugins nrpe nagios-plugins-load nagios-plugins-ping nagios-plugins-disk nagios-plugins-http nagios-plugins-procs nagios-plugins-users wget
+wget -O /usr/lib64/nagios/plugins/check_mem.sh https://raw.githubusercontent.com/nic-instruction/NTI-320/master/nagios/check_mem.sh
+chmod +x /usr/lib64/nagios/plugins/check_mem.sh
+systemctl enable nrpe
+systemctl start nrpe
 
 yum -y install nagios-nrpe-server nagios-plugins
 yum -y install nrpe
@@ -23,6 +27,5 @@ sed -i 's,#command\[check_mem\]=/usr/lib64/nagios/plugins/custom_check_mem -n \$
 systemctl restart nrpe
 install plugins for nrpe
 
-yum install -y nagios-nrpe-server nagios-plugins nrpe nagios-plugins-load nagios-plugins-ping nagios-plugins-disk nagios-plugins-http nagios-plugins-procs nagios-plugins-users wget
-wget -O /usr/lib64/nagios/plugins/check_mem.sh https://raw.githubusercontent.com/nic-instruction/NTI-320/master/nagios/check_mem.sh
-chmod +x /usr/lib64/nagios/plugins/check_mem.sh
+
+
