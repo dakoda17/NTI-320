@@ -49,7 +49,7 @@ define service{
         service_description             memory
         check_command                   check_nrpe!check_mem
 }
-">> /etc/nagios/conf.d/"$host".cfg
+"> "$host".cfg
 #then cd /etc/nagios
 #vim generate_config.sh
 #then :set paste, insert
