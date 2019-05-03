@@ -27,6 +27,14 @@ echo "define command{
                                 command_line /usr/lib64/nagios/plugins/check_nrpe -H $HOSTADDRESS$ -c $ARG1$
                                 }" >> /etc/nagios/objects/commands.cfg
 
+# Note: I had to add user nicolebade to group nagios using:
+usermod -a -G nagios koda
+# I also had to:
+chmod 775 /etc/nagios/conf.d
+# I also had to:
+usermod -a -G nagios koda
+
+
 #chmod +x /usr/lib64/nagios/plugins/check_mem.sh
 
 #for the client
