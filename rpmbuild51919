@@ -22,4 +22,9 @@ rpm -ivh ./nagios-4.4.3-1.el7.src.rpm
 tar xvzf /root/rpmbuild/SOURCES/nrpe-3.2.1.tar.gz
 tar xvzf /root/rpmbuild/SOURCES/nagioscore-nagios-4.4.3.tar.gz
 
+#found spec files in /root/rpmbuild/SPECS for nagios.spec and nrpe.spec
+#cp ea to /usr/local/src with the intent of pushing up
+yum -y install git
+git 
+
 
