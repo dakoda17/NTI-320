@@ -25,6 +25,7 @@ tar xvzf /root/rpmbuild/SOURCES/nagioscore-nagios-4.4.3.tar.gz
 #found spec files in /root/rpmbuild/SPECS for nagios.spec and nrpe.spec
 #cp ea to /usr/local/src with the intent of pushing up
 yum -y install git
-git 
+git clone https://github.com/dakoda17/NTI-320.git NTI-320
+
 
 
