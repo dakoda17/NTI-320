@@ -1,2 +1,25 @@
-
+#!/bin/bash
+#tried this first
 yum install -y rpm-build
+
+#tried this second - neither gave me the directories i thought they would
+yum -y install yum-utils rpmbuild
+
+#ran from Ms. Bade and then i had the directories i thought i would
+yumdownloader --source nrpe
+yumdownloader --source nagios
+
+#ran this tosee where the top dir was
+rpm --showrc | grep topdir
+
+#to run the code?? - i went and looked in: cd /root/rpmbuild/SOURCES/ and the tar files were there for each
+rpm -ivh ./nrpe-3.2.1-8.el7.src.rpm
+rpm -ivh ./nagios-4.4.3-1.el7.src.rpm
+
+#cd'd into /usr/local/src dir to run the tar.gz source code from root
+
+#ran the following out of /usr/local/src from root
+tar xvzf /root/rpmbuild/SOURCES/nrpe-3.2.1.tar.gz
+tar xvzf /root/rpmbuild/SOURCES/nagioscore-nagios-4.4.3.tar.gz
+
+
