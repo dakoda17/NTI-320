@@ -27,5 +27,36 @@ tar xvzf /root/rpmbuild/SOURCES/nagioscore-nagios-4.4.3.tar.gz
 yum -y install git
 git clone https://github.com/dakoda17/NTI-320.git NTI-320
 
+#add the files of the specs to the NTI-320 directory, then from the directory
+#git add <file>
+#git commit -m "adding file"
+#git push and refresh the git pageGRP 
+
+#cd's into # cd /root/rpmbuild/SPECS
+# rpmbuild -ba nagios.spec
+# rpmbuild -ba nrpe.spec
+
+#from specs solder ran for nagios:
+yum install libxstl-devel #nothing to do
+yum -y install libvorbis-devel
+yum -y install doxygen
+yum -y install gcc
+yum -y install gd-devel gperf libjpeg-devel
+yum -y install perl-generators
+#this was said no package nothing to do
+#yum -y install perl CPAN
+yum -y install libtool
+yum -y install selinux-policy-devel
+
+#from specs solder ran for nrpes:
+yum -y install openssl-devel tcp_wrappers-devel
+#then ran and the file took a long time to execute:
+rpmbuild -ba nrpe.spec
+
+
+
+
+
+
 
 
