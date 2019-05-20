@@ -43,8 +43,11 @@ yum -y install doxygen
 yum -y install gcc
 yum -y install gd-devel gperf libjpeg-devel
 yum -y install perl-generators
-#this was said no package nothing to do
-#yum -y install perl CPAN
+yum -y install cpan
+sudo
+yes
+
+
 yum -y install libtool
 yum -y install selinux-policy-devel
 
