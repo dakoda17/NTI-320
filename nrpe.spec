@@ -1,9 +1,14 @@
 
+#this is my spec file for NRPE
+#cat /root/rpmbuild/SPECS/nrpe.spec
+
+#this section is the prep section that that defines the port to be used and the OS of the spec?? 
 %if 0%{?fedora} > 19
 %global _hardened_build 1
 %endif
 %define nsport 5666
 
+#this is the preamble section that providfes info about the package being build along with its dependencies
 Name: nrpe
 Version: 3.2.1
 Release: 8%{?dist}
@@ -69,6 +74,7 @@ Summary: Provides nrpe plugin for Nagios
 Requires: nagios-plugins
 Provides: check_nrpe = %{version}-%{release}
 
+#this section provides info about the package
 %description -n nagios-plugins-nrpe
 Nrpe is a system daemon that will execute various Nagios plugins
 locally on behalf of a remote (monitoring) host that uses the
@@ -92,12 +98,13 @@ Requires(postun): policycoreutils
 SElinux context for %{name}.
 %endif
 
+#these could be predefined macros
 %prep
 %setup -q
 %patch3 -p1 -b .include_etc_npre_d
 %patch13 -p1 -b .fix_service_rhel6
 
-
+#this is the section that actually does the building
 %build
 CFLAGS="$RPM_OPT_FLAGS" CXXFLAGS="$RPM_OPT_FLAGS" LDFLAGS="%{?__global_ldflags}" \
 %configure \
@@ -131,7 +138,7 @@ touch selinux/%{name}_epel.if
 make -f %{_datadir}/selinux/devel/Makefile
 %endif
 
-
+#this section is used for the installation
 %install
 rm -rf %{buildroot}
 %if 0%{?el6}%{?el7}
