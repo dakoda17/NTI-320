@@ -1,4 +1,7 @@
-%global _hardened_build 1
+#this is my spec file for nagios
+#cat /root/rpmbuild/SPECS/nagios.spec
+
+#this is the preamble section that providfes info about the package being build along with its dependencies
 
 Name:           nagios
 Version:        4.4.3
@@ -95,6 +98,7 @@ Requires(post):   initscripts, chkconfig
 Requires(postun): initscripts
 %endif
 
+#this section provides info about the package
 %description
 Nagios is a program that will monitor hosts and services on your
 network.  It has the ability to send email or page alerts when a
@@ -128,7 +132,7 @@ Group:          Applications/System
 Summary:        Provides include files that Nagios-related applications may compile against
 Requires:       %{name} = %{version}-%{release}
 
-
+#this section provides info about the package
 %description devel
 Nagios is a program that will monitor hosts and services on your
 network. It has the ability to email or page you when a problem arises
@@ -161,6 +165,7 @@ Requires:         %name = %version-%release
 %description contrib
 Various contributed items used by plugins and other tools.
 
+#these could be predefined macros
 %prep
 %setup -q -n nagioscore-nagios-%{version}
 
@@ -181,7 +186,7 @@ Various contributed items used by plugins and other tools.
 
 install -p -m 0644 %{SOURCE10} %{SOURCE11} %{SOURCE12} html/images/logos/
 
-
+#this is the section that actually does the building
 %build
 %configure \
     --prefix=%{_datadir}/%{name} \
@@ -245,7 +250,7 @@ touch selinux/%{name}_epel.if
 make -f %{_datadir}/selinux/devel/Makefile
 %endif
 
-
+#this section is used for the installation
 %install
 rm -rf $RPM_BUILD_ROOT
 
