@@ -2,7 +2,7 @@
 # This is a script meant to let us test NRPE
 # plugins we write
 
-status=(ps aux | grep -c "")        # Change the status to test different alert states originally ("0"). 
+status=$(ps aux | grep -c "")        # Change the status to test different alert states originally ("0"). 
 
 if [ $status -lt "100" ]; then
     echo "STATUS:OK"
